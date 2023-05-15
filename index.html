@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>자바스크립트 1일차</title>
+ <script>
+  function welcome(){
+     alert("welcome to my world");  // 내장함수 호출
+  }
+  document.write("<h1>오늘은 월요일</h1>");
+ </script>
+</head>
+<body>
+ <h1> 자바스크립트 첫경험</h1>
+ <h2> 자바스크립트의 입력방식</h2>
+ <p> 인라인스크립트/ 내부스크립트/외부스크립트</p>
+ <a href="#" onclick="alert('welcome')" style="color:red"> 클릭(인라인)</a>
+ <br>
+ <a href="#" onclick="welcome()"> 환영합니다.</a>
+ <hr>
+ <a href="javascript:alert('안녕하세요')">안녕</a>
+
+ <script>
+  document.write("<h2>welcome to </h2>");
+  document.write("welcome to my world");
+  document.write('welcome to my world');
+ // 문서(body).쓰다() 
+ </script>
+</body>
+</html>
