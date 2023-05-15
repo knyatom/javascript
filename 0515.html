@@ -1,13 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
  <meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>0515</title>
- <script src="js/0515-1.js"></script>
+ <!-- <script src="js/0515-1.js"></script> -->
+ <style>
+  #text{ font-size: 20px;}
+ </style>
 </head>
+
 <body>
+ <h1> 글자확대축소하기</h1>
+ <button id="large">확대</button>
+ <button id="small">축소</button>
+
+ <p id="text"> welcome to my world</p>
+
+<script>
+var large=document.getElementById('large');
+var small=document.getElementById('small');
+var text=document.getElementById('text');
+    text.style.fontSize='16px';
  
+var num=parseInt(text.style.fontSize);  // 글자 기본값 지정
+
+// font-size -> fontSize
+large.onclick=function(){
+ text.style.fontSize= num + 'px';
+ num++;
+}
+small.onclick=function(){
+ text.style.fontSize=num+'px';
+ num--;
+}
+
+
+</script>
+
 </body>
+
 </html>
