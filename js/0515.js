@@ -145,9 +145,16 @@ if(성인==true){
 
 // prompt에서 취소 누르면 null값이 출력된다.
 
+// = 대입연산자
+// a = 3;   // a라는 변수 3을 대입해라.
+//  ==,   ===
 
-
-
+function 호랑이(){
+  console.log("나는 호랑이")
+}
+var 호랑=new 호랑이();
+//console.log(JSON.stringify(호랑이));
+console.log(호랑);
 
 
 
