@@ -117,6 +117,23 @@ console.timeEnd("시작");
 22~33페이지 실습하기
 
 증감연산자
+----------------------
+background-color
+backgroundColor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
