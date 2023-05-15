@@ -1,2 +1,29 @@
 5월 15일 자바스크립트 1일차
 
+https://github.com/knyatom/javascript.git
+
+"  "
+문자열 -> "  "  또는  '  '
+
+alert() 함수
+window.alert("문자열")
+window.document.write();
+객체기반언어
+객체이름, 객체사용법, 객체의 속성
+객체의 부모->상속
+
+${변수명}
+${name} -> expression 표현식
+표현식과 문장
+
+
+
+
+
+
+
+
+
+
+
+
