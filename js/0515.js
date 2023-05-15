@@ -153,7 +153,7 @@ function 호랑이(){
   console.log("나는 호랑이")
 }
 var 호랑=new 호랑이();
-//console.log(JSON.stringify(호랑이));
+console.log(JSON.stringify(호랑이));
 console.log(호랑);
 
 

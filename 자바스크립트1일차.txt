@@ -61,6 +61,7 @@ do~while
   호이스팅
   화살표함수
   리터럴
+  콜스택
 
 객체- for in 반복문
 
@@ -101,7 +102,13 @@ ajax 통신
 DB연동
 ----------------------
 
+console.time("시작");
+ num1=num1+10;
+console.timeEnd("시작");
 
+console.time("시작");
+ num1+=10;
+console.timeEnd("시작");
 
 
 
