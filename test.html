@@ -12,15 +12,24 @@
 </head>
 
 <body>
-<button onclick="Change(this,'red')"> 버튼</button>
-<button onclick="Change(this,'blue')"> 버튼2</button>
-<button onclick="Change(this,'gray')"> 버튼3</button>
+    <h1>클로져를 활용한 배경색 변경하기</h1>
 
 <script>
-    function Change(obj,color){
-        obj.style.color=color;
-    };  
-
+   var color = ['red', 'gold', 'silver', 'pink', 'blue', 'brown'];
+        var btn = document.querySelector('button');
+        var h1 = document.querySelector('h1');
+       var aaa = change();
+        
+           aaa();
+        
+        function change() {
+            var i = 0;
+            function inner() {
+                i++;
+                h1.style.background = color[i];
+            }
+            return inner;
+        }
 </script>
 </body>
 
