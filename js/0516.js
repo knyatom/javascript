@@ -150,12 +150,27 @@ for(var i in 고양이){
  document.write(i+ " : " + 고양이[i] + "<br>");
 }
 
+// 사람을 정의
+// 나이는 30살, 이름은 홍길동, 생일은 9월01일
+// 사람이 밥을 먹고 소화를 했다.
+// 취미는 인터넷게임
+var person={
+  name:"hong gil dong",
+  age:30,
+  birthDay: new Date(),  // 오늘이 생일
+  hoppy: "internet game",
+  eat(food="밥"){
+   return this.name+"이 " + food+"을 먹고 소화했다";
+  }
+}
 
+document.write(person.eat("육개장")+"<br>");
 
+for(var i in person){
+ document.write(i + " : " +person[i]+"<br>");
+}
 
-
-
-
+document.write(person.eat()+"<br>");
 
 
 

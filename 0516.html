@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
  <meta charset="UTF-8">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Document</title>
- <script src="js/0516.js"></script>
+ <!-- <script src="js/0516.js"></script> -->
 </head>
+
 <body>
- 
+ <img src="./imgs/cat1.png" id="img">
+ <h1 id="h1"> 나는 누구인가?(클릭금지) </h1>
+
+ <script>
+  var cat = {
+   name: "야옹이",
+   age: "2살"
+  }
+  var img = document.getElementsByTagName('img'); // 배열
+  //var h1 = document.getElementById('h1');
+
+  var i = 0;
+  img[0].onclick = function () {
+   if (i % 2) {  // 나머지가 1이면
+    h1.innerHTML = cat.name + "이고 " + cat.age + "입니다";
+   }else{
+    h1.innerHTML = "나는 누구인가???";
+   }
+   i++;
+  }
+
+  img[0].width=200;
+  img[0].height=150;
+
+  // 이미지에 마우스를 올릴때 사진교체하기
+   img[0].onmouseover=function(){
+     this.src="./imgs/cat2.png";
+     this.width=200;   // img 태그의 width 속성 변경
+     this.height=150;
+   }
+   img[0].onmouseout=function(){
+     this.src="./imgs/cat1.png";
+     this.style.width='200px';  // img태그의 css style 변경
+     this.height=150;
+   }
+   // 고전이벤트
+   img[0].ondblclick=function(){
+    h1.style.backgroundColor="pink";
+    h1.style.border="5px double blue";
+    h1.style.padding="10px";
+    h1.style.borderRadius="30px"
+   }
+
+ </script>
+
 </body>
+
 </html>
