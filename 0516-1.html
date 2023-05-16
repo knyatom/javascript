@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="js/0516-1.js"></script>
+</head>
+
+<body>
+  <h2> 버튼을 클릭했을때 배경색 변경하기</h2>
+  <button id="button" onclick="chColor(this,'red')">버튼1</button>
+  <button id="button2" onclick="chColor(this,'blue')">버튼2</button>
+  <hr>
+  <button onclick="chColor(this,'red')">버튼3</button>
+  <button onclick="chColor(this,'blue')">버튼4</button>
+  <button onclick="chColor(this,'gold')">버튼5</button>
+  <div id="div"> Box .........</div>
+  <script>
+    function chColor(obj,color){
+      console.log(color+"가 적용됨");
+       obj.style.color=color;
+    }
+    var color = ["red", "pink", "blue", "orange", "gold", "gray"];
+    var body = document.getElementsByTagName('body')[0]; // 배열
+    var body = document.querySelector('body');
+    // 객체.이벤트타입=이벤트리스너 ;
+    var i = 0;
+    button.addEventListener('click', function () {
+      i = i % color.length;  // 0,1,2,3,4,5
+      //if(i>6) i=0;
+      body.style.backgroundColor = color[i];
+      i++;      
+    });
+
+    // 버튼하나 만들어서 , div 박스 하나 생성해서 버튼클릭하면
+    // 배경색 변경하게 하기
+
+    div.style.width = "300px";
+    div.style.height = "250px";
+    // 자바스크립트로 스타일 지정하면 인라인스타일로 지정된다.
+
+    var i = 0;
+    button2.onclick = function () {
+      i = i % color.length;
+      div.style.backgroundColor = color[i];
+      div.style.color = color[i+1];
+      div.style.fontSize="30px";
+      i++;
+    }
+
+
+  </script>
+
+</body>
+
+</html>

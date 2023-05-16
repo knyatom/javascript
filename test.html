@@ -5,25 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
     <script>
-        let delay = 5000;
-
-        let timerId = setTimeout(function request() {
-            //...요청 보내기...
-
-            if (err) {
-                // 요청 간격을 늘립니다.
-                delay *= 2;
-            }
-
-            timerId = setTimeout(request, delay);
-
-        }, delay);
+      
     </script>
 </head>
 
 <body>
+<button onclick="Change(this,'red')"> 버튼</button>
+<button onclick="Change(this,'blue')"> 버튼2</button>
+<button onclick="Change(this,'gray')"> 버튼3</button>
 
+<script>
+    function Change(obj,color){
+        obj.style.color=color;
+    };  
+
+</script>
 </body>
 
 </html>
