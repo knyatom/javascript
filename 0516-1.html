@@ -17,12 +17,23 @@
   <button onclick="chColor(this,'red')">버튼3</button>
   <button onclick="chColor(this,'blue')">버튼4</button>
   <button onclick="chColor(this,'gold')">버튼5</button>
+  <button onmouseover="chColor2(this,'gold')"
+  onmouseout="chColor2(this,'pink')">버튼6</button>
+  <button onmouseout="chColor2(this,'pink')" 
+  onmouseover="chColor2(this,'gold')">버튼6</button>
+
   <div id="div"> Box .........</div>
+
   <script>
     function chColor(obj,color){
       console.log(color+"가 적용됨");
        obj.style.color=color;
     }
+    function chColor2(obj,color){     
+       obj.style.backgroundColor=color;
+    }
+
+
     var color = ["red", "pink", "blue", "orange", "gold", "gray"];
     var body = document.getElementsByTagName('body')[0]; // 배열
     var body = document.querySelector('body');
