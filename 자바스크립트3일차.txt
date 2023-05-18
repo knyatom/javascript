@@ -90,6 +90,48 @@ forEach(function(){ });
 함수()(); 
 -> 함수의 내부함수를 호출한다.
 
+callback 콜백
+
+통신,
+동기방식
+비동기방식
+
+jsonplaceholder
+
+https://jsonplaceholder.typicode.com/
+
+fetch()
+ajax()
+axios()
+
+var 배열=[]
+var 배열=[{ }, { }, { }];
+배열객체
+JSON 자바스크립트 객체표기법
+xml
+csv
+txt
+
+user[0].title
+
+for in
+for of
+
+fetch().then().then()
+
+new Array()
+new String()
+new Number()
+
+
+
+
+
+
+
+
+
+
 
 
 
