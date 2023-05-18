@@ -1,5 +1,66 @@
-var str=new String("welcome");
+var students = [];
 
-for(var i in str){
-    console.log(str[i]);
+students.push(makeStudent('윤인성', 87, 98, 88, 95));
+
+students.push(makeStudent('연하진', 92, 98, 96, 98));
+
+students.push(makeStudent('구지연', 76, 96, 94, 90));
+
+students.push(makeStudent('나선주', 98, 92, 96, 92));
+
+students.push(makeStudent('윤아린', 95, 98, 98, 98));
+
+students.push(makeStudent('윤명월', 64, 88, 92, 92));
+
+students.push(makeStudent('김미화', 82, 86, 98, 88));
+
+students.push(makeStudent('김연화', 88, 74, 78, 92));
+
+students.push(makeStudent('박아현', 97, 92, 88, 95));
+
+students.push(makeStudent('서준서', 45, 52, 72, 78));
+console.log(students);
+
+function makeStudent(name, korean, math, english, science) {
+
+    var willReturn = {
+
+        // 속성
+
+        이름: name,
+
+        국어: korean,
+
+        수학: math,
+
+        영어: english,
+
+        과학: science,
+
+
+
+        // 메서드
+
+        getSum: function () {
+
+            return this.국어 + this.수학 + this.영어 + this.과학;
+
+        },
+
+        getAverage: function () {
+
+            return this.getSum() / 4;
+
+        },
+
+        toString: function () {
+
+            return this.이름 + '\t' + this.getSum() + '\t' + this.getAverage();
+
+        }
+
+    };
+
+    return willReturn;
+
 }

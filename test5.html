@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0518</title>
+
+</head>
+
+<body>
+
+    <script>
+        function Marin(level, name, 종족, life) {
+            this.life = life;
+            this.name = name;
+            this.level = level;
+            this.종족 = 종족;
+            this.fire = function () {
+                this.level += 1;
+                if (this.level < 3) {
+                    document.write(this.name + "이 공격합니다.");
+                } else {
+                    document.write(this.name + "스팀백을 장착했습니다.<br>");
+                }
+            };
+            this.defend = function () {
+                this.life -= 5;
+                if (this.life < 0)
+                    document.write("마린이 전사했습니다");
+            };
+            this.정찰=function(){
+                document.write("정찰나갑니다.");
+            }
+        }
+        var 마린1 = new Marin(1, "마린", "테란", 10);
+        마린1.fire(); 마린1.fire(); 마린1.fire();     마린1.fire(); 
+        마린1.defend(); 마린1.defend(); 마린1.defend();    마린1.defend();
+
+        setInterval(마린1.정찰,3000);
+        // 3초마다 정찰나감..         
+
+
+    </script>
+
+</body>
+
+</html>

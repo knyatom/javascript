@@ -123,20 +123,92 @@ new Array()
 new String()
 new Number()
 
+컬렉션 -> 객체의 배열
 
 
+isNaN() 숫자가 아니다.
 
+$('li').css('background','red');
 
+iterable 객체
 
+var menu=document.getElementsByClassName('menu')[0];
+menu[0]
 
+순수배열.forEach((요소,인덱스)=>{ });
 
+li -> html 컬렉션 배열(유사배열)
 
+html컬렉션 배열을 순수배열로 바꾸기
+자바스크립트에서 객체를 배열로 바꾸기
 
+ var test=document.getElementById() ;
+ var test=document.getElementsByTagName();
+ var test=document.getElementsByClassName();
 
+var lia=document.querySelector('li>a');
+var lia=document.querySelectorAll('li>a');
 
+innerHTML  -> html 
+textContent  -> text
+length
+item(i)
+childNodes
+children
+firstChild
+lastChild
+nextSibling
+classList
+parentElement
+parentNode
+nodeType
+className
+previousSibling
+classList
 
+nodeType
+태그 -> 1
+속성 -> 2
+텍스트 -> 3
 
+<h2 title="title">text</h2>
 
+children -> 태그들
+nodeValue 와 nodeName
+childeNode로 접근하거나
+item(0)으로 접근한다.
+
+nextElementSibling
+다음 형제 요소 
+firstElementChild
+첫번째 자식태그
+
+childElementCount
+자식요소의 개수
+
+.classList.add()  클래스추가
+.classList.remove() 클래스제거
+
+동적으로 클래스를 추가
+
+객체.id 
+객체.title
+header.src
+img.src
+img.alt
+
+// add.onclick=function(){  }
+// 고전 이벤트
+
+// 표준이벤트
+// add.addEventListener('click',function(){ });
+
+appendChild()
+removeChild()
+
+이벤트타켓.addEventListener(이벤트타입,리스너)
+이벤트타입 -> click, mouseover, 
+리스너 -> 콜백함수, 
 
 
 

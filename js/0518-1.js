@@ -1,7 +1,7 @@
 // for in 반복문
 // window
-for (var i in window) {
- console.log(`${i} : ${window[i]}`); 
+for (var i in window.Array) {
+ console.log(`???? ${i} : ${window.Array[i]}`); 
 }
 
 var user = [{

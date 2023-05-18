@@ -1,0 +1,7 @@
+[
+{"name":"kim1","kor":87,"math":"98","eng":88,"sci":95},
+{"name":"kim1","kor":87,"math":"98","eng":88,"sci":95},
+{"name":"kim1","kor":87,"math":"98","eng":88,"sci":95},
+{"name":"kim1","kor":87,"math":"98","eng":88,"sci":95},
+{"name":"kim1","kor":87,"math":"98","eng":88,"sci":95}
+]

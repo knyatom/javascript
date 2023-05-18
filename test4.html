@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0518</title>
+
+</head>
+
+<body>
+    <h1>문서객체모델</h1>
+    <ul class="menu">
+        <li><a href="#">menu1</a></li>
+        <li><a href="#">menu2</a></li>
+        <li><a href="#">menu3</a></li>
+        <li><a href="#">menu4</a></li>
+        <li><a href="#">menu5</a></li>
+    </ul>
+
+    <script src="js/0518-2.js"></script>
+    <script>
+var li=document.getElementsByTagName('li');
+        console.log(Array.from(li));
+
+        Array.from(li).forEach((ele, i) => {
+            //console.log(ele);
+            ele.style.textAlign = "center"
+        });
+    </script>
+
+</body>
+
+</html>
