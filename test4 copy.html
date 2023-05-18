@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>0518</title>
+
+</head>
+
+<body>
+ <div id="table"></div>
+
+ <!-- <script src="js/0518-2.js"></script> -->
+ <script>
+  fetch('student.txt')
+   .then(response => response.json())
+   .then(json => {
+
+    document.write("<table>");
+    document.write("<th>이름</th><th> 국어</th> <th> 영어</th> <th> 수학</th> <th> 과학</th>");
+    
+    for (var i in json) {
+     document.write("<tr>");
+     document.write("<td>" + json[i].name + "</td><td>" + json[i].kor + "</td>");
+     document.write("<td>" + json[i].eng + "</td><td>" + json[i].math + "</td>");
+     document.write("<td>" + json[i].eng + "</td><td>" + json[i].sci + "</td>");
+     document.write("</tr>");
+    }
+
+    document.write("</table>");
+    console.log(json)
+
+   })
+ </script>
+
+</body>
+
+</html>
