@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0518</title>
+
+</head>
+
+<body>
+  <form name=form1> 
+    <input type=text value='Text1' name=text1> 
+    <input type=text value='Text2' name=text2> 
+    <input type=submit name=submitform>
+   </form> 
+   <a href="javasript:void(0)">기본이벤트제거</a>
+   <a href="http://www.daum.net" onclick="add(); return false">기본이벤트제거</a>
+
+   <script>
+    document.form1.text1.style.background="red";
+    document.forms[0].elements[0].style.background="blue" 
+    document.form1.style.border="3px solid red";
+    function add(){
+      document.body.append("<h1>함수 호출했음</h1>");
+    }
+   </script>
+</body>
+
+</html>

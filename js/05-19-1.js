@@ -48,4 +48,19 @@ fetch('https://jsonplaceholder.typicode.com/users')
  });
 // 코드 줄이기
 
-
+document.write("<hr>");
+fetch('https://jsonplaceholder.typicode.com/users')
+.then(response => response.json())
+.then(data => {
+document.write("<table border='1'>");
+document.write("<tr>");
+document.write("<th>이름</th><th>전화번호</th><th>이메일</th>")
+document.write("</tr>");
+ for (var i in data) {
+  document.write("<tr>");
+  document.write("<td>"+data[i].name+"</td><td>"+ data[i].phone+"</td><td>"+ data[i].email+"</td>" );
+  document.write("</tr>");
+ }
+ document.write("</table>");
+ console.log(data);
+});

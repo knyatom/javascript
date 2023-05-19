@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script src="js/05-19-3.js" defer></script>
+</head>
+<body>
+  <h2> 글자스타일 변경</h2>
+  <img src="./imgs/cat1.png" id="img">
+  <hr>
+  <button onclick="change()">
+    이미지변경(토글)</button>
+  <button onclick="hide()">
+    이미지숨김</button>
+  <button onclick="show()">
+    이미지표시</button>
+  <button onclick="changeStyle()">
+    글자스타일변경</button>
+  
+
+
+<script>
+
+img.style.width = "200px";
+img.style.height = "150px";
+
+var i = 0;  // 전역변수
+function change() {
+ if (i % 2 == 0)
+  img.src = "./imgs/cat2.png";
+ else {
+  img.src = "./imgs/cat1.png";
+ }
+ i++;
+}
+// 클로저, 내부함수호출
+function hide(){
+ img.style.visibility="hidden";
+}
+function show(){
+ img.style.visibility="visible";
+}
+function changeStyle(){
+  var h2=document.querySelector('h2');
+  h2.style={
+    background:'pink',
+    fontSize:"italic",
+    clor:'red'
+  }
+  console.log(h2);
+  // h2.style.background="pink";
+  // h2.style.fontStyle="italic";
+  // h2.style.color="red";
+  // h2.style.fontSize="30px";
+}
+</script>
+
+</body>
+</html>

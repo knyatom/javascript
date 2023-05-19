@@ -5,12 +5,75 @@
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Document</title>
- <script src="js/05-19-1.js"></script>
+ <script src="js/05-19-2.js" defer></script>
 </head>
 <body>
  
+ <h1> 문서객체모델 예제</h1>
+<ul id="ul">
+ <li> data1</li>
+ <li> data2</li>
+ <li> data3</li>
+</ul>
+<h2></h2>
+<div id="wrap">
+ <p>내용1</p>
+ <p>내용2</p>
+ <p>내용3</p>
+ <p>내용4</p>
+</div>
 
+<form name="fm">
+ 가장좋아하는 음식은?
+ <select id="food">
+  <option value="라면">라면</option>
+  <option value="만두" selected>만두</option>
+  <option value="불고기">불고기</option>
+ </select>
+ <input type="submit" name="submit">
+</form>
+<form name="form2">
+ <input type="text">
+ <input type="text" name="input2">
+</form>
+<hr>
 
+<form name="f1" action="http://www.daum.net">
+ <fieldset>
+   <legend>폼요소</legend>
+   <p>  <label for="pw1">비밀번호</label>
+    <input type="text" name="pw1" id="pw1">
+   </p>
+   <p> <label for="pw2">비밀번호확인</label>
+    <input type="text" name="pw2" id="pw2">
+    <input type="submit" value="확인">
+    <button onclick="return false; this.form.submit();"> 전송</button>
+   </p>
+   <p> <input type="text" name="name"
+     value="장돈건">
+   </p>
+   <p> <label>관심과목</label>
+    <input type="checkbox" name="ch1" 
+    value="c1">
+    자바스크립트
+   </p>
+ </fieldset>
+</form>
+<span></span>
+<hr>
+<h1>기본이벤트 제거 </h1>
+<a href="http://www.daum.net">다음</a>
+<a href="#">화면상단으로 점핑</a>
+<a href="javascript:void(0)">기본이벤트제거</a>
+<br>
+<a href="http://www.daum.net" onclick="myFun();return false">다음2</a>
+
+<script>
+ function myFun(){
+//  document.write("함수를 호출함");
+  document.body.append("<h1> 함수 호출함 </h1>");
+ }
+</script>
 
 </body>
 </html>
