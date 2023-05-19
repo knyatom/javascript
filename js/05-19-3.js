@@ -24,6 +24,4 @@ function changeStyle(){
  h2.style.color="red";
  h2.style.fontSize="30px";
 
-
-
 }
