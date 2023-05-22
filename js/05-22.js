@@ -296,3 +296,33 @@ document.write(c3.print());
 // radius의 값을 가져올때 getRadius 로 하자
 // this.radius -> radius ,  getRadius로 하자.
 // parseInt() 정수값을 변환하는 함수
+
+// 프로토타입과 상속에 대하여
+function Grand(){ }
+Grand.prototype.재산="1억";
+
+var Father = new Grand();
+document.write(`<h2> ${Father.재산} </h1>`);
+
+Father.재산="2억";
+document.write(`<h2> 아버지재산 ${Father.재산} </h1>`);
+
+function Mama(){ }
+var 엄마=new Mama();
+
+Mama.prototype.재산="오천원";
+document.write(`<h2>엄마재산 ${엄마.재산} </h1>`);
+console.log(`<h2>엄마재산 ${엄마.재산} </h1>`);
+
+function Son(){ }
+Son.prototype= new Mama();
+var 아들=new Son();
+아들.prototype=엄마;
+document.write(`<h2>아들재산 ${아들.재산} </h1>`);
+
+엄마.재산="만원"; // 쌈지돈
+document.write(`<h2>아들재산 ${아들.재산} </h1>`);
+
+Mama.prototype.재산="5억";  // 상속받을 재산
+document.write(`<h2>아들재산 ${아들.재산} </h1>`);
+document.write(`<h2>엄마재산 ${엄마.재산} </h1>`);
