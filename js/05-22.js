@@ -258,7 +258,41 @@ console.log(c3.getLength());
 //c3.setRadius(-5);
 console.log(c3.getLength());
 console.log(c3.getRadius());
-c3.radius=20;
-console.log(c3.radius);
+c3.radius=20;  //  XX
+console.log(c3.radius);  //  XX
 console.log(c3 instanceof Circle3); // true
 console.log(c3 instanceof Circle); // false
+c3.setRadius(6);
+var c3=new Circle3();
+
+function Circle3(r){
+ var radius=r;  // 캡슐화, 은닉화
+ this.getRadius=function(){
+   return radius;
+ }
+ this.setRadius=function(r){
+  if(r<0){
+   throw "원의반지름은 양수이어야 합니다"
+  }else{
+   radius=r;
+  }  
+ }
+ // 오버라이딩 메소드 재정의
+ this.toString=function(){
+   return "반지름은" + this.getRadius() +"이고 원의둘레는" + this.getLength()+"입니다";
+ }
+ this.print=function(){
+  return `${this.getRadius()} :  ${parseInt(this.getLength())}` ;
+  }
+ this.output=function(){ }
+}
+document.write("<br>");
+var c3=new Circle3();
+c3.setRadius(4);
+document.write(c3.toString());
+document.write("<br>");
+document.write(c3.print());
+
+// radius의 값을 가져올때 getRadius 로 하자
+// this.radius -> radius ,  getRadius로 하자.
+// parseInt() 정수값을 변환하는 함수
