@@ -65,10 +65,20 @@ class -> extends 상속
 Math.PI -> 3.14
 
 
+객체.addEventListener(이벤트타입, 콜백)
 
+함수가 매개변수로 들어갈때는
+소괄호( ) 를 생략한다.
 
+toggle->참조변수
 
+toggle()  함수를 실행한다.
 
+toggle 실행할 함수수행문을 가리킨다.
+
+getter, setter
+
+<h1> welcome</h1>
 
 
 

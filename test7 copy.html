@@ -8,50 +8,24 @@
  <!-- <script src="js/05-19-3.js" defer></script> -->
 </head>
 <body>
-  <h2> 글자스타일 변경</h2>
-  <img src="./imgs/cat1.png" id="img">
-  <hr>
-  <button onclick="change()">
-    이미지변경(토글)</button>
-  <button onclick="hide()">
-    이미지숨김</button>
-  <button onclick="show()">
-    이미지표시</button>
-  <button onclick="changeStyle()">
-    글자스타일변경</button>
+<button>버튼</button>
+<button id="del">버튼1</button>
+<div id="box"></div>
   
 <script>
-img.style.width = "200px";
-img.style.height = "150px";
+var btn=document.querySelector('button');
+var output='';
+output+="<ul>";
+output+="<li>wer</li>";
+output+="<li>wer</li>";
+output+="<li>wer</li>";
+output+="</ul>";
 
-var i = 0;  // 전역변수
-function change() {
- if (i % 2 == 0)
-  img.src = "./imgs/cat2.png";
- else {
-  img.src = "./imgs/cat1.png";
- }
- i++;
+btn.onclick=function(){
+ box.innerHTML=output;
 }
-// 클로저, 내부함수호출
-function hide(){
- img.style.visibility="hidden";
-}
-function show(){
- img.style.visibility="visible";
-}
-function changeStyle(){
-  var h2=document.querySelector('h2');
-  h2.style={
-    background:'pink',
-    fontSize:"italic",
-    clor:'red'
-  }
-  console.log(typeof h2.style.background);
-  // h2.style.background="pink";
-  // h2.style.fontStyle="italic";
-  // h2.style.color="red";
-  // h2.style.fontSize="30px";
+del.onclick=function(){
+ box.innerHTML="";
 }
 </script>
 
