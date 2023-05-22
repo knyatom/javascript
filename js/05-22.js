@@ -310,14 +310,14 @@ document.write(`<h2> 아버지재산 ${Father.재산} </h1>`);
 function Mama(){ }
 var 엄마=new Mama();
 
-Mama.prototype.재산="오천원";
+Mama.prototype.재산=Father.재산; // 
 document.write(`<h2>엄마재산 ${엄마.재산} </h1>`);
 console.log(`<h2>엄마재산 ${엄마.재산} </h1>`);
 
 function Son(){ }
-Son.prototype= new Mama();
-var 아들=new Son();
-아들.prototype=엄마;
+Son.prototype=new Mama(); // 상속
+var 아들=new Son(); 
+아들.prototype=엄마;  // 상속
 document.write(`<h2>아들재산 ${아들.재산} </h1>`);
 
 엄마.재산="만원"; // 쌈지돈
@@ -326,3 +326,9 @@ document.write(`<h2>아들재산 ${아들.재산} </h1>`);
 Mama.prototype.재산="5억";  // 상속받을 재산
 document.write(`<h2>아들재산 ${아들.재산} </h1>`);
 document.write(`<h2>엄마재산 ${엄마.재산} </h1>`);
+
+Son.prototype=엄마; 
+document.write(`<h2>아들재산 ${아들.재산} </h1>`);
+
+아들.prototype=new Mama();
+document.write(`<h2>아들재산 ${아들.재산} </h1>`);
