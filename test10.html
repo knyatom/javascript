@@ -13,26 +13,13 @@
 
 
   <script>
-    // 변수를 생성합니다.
-
-    let primitiveNumber = 273;
-
-    // 메소드를 추가합니다.
-
-    Number.prototype.toString = function () {
-
-      return 'Primitive Method';
-
-    };
-
-    // 메소드를 실행합니다.
-
-    console.log(primitiveNumber.toString());
-    var array1 = [1,2,2,2,2];
-    for (var i = 1; i <= 45; i++) {
-      array1.fill(i);
-    }
-    console.log(array1);
+    var aaa='<ul>';
+    var fruit = ['apple', 'straberry', 'banana', "cherry", "coconut", "blueberry"];
+     fruit.forEach((item, index) => {
+       aaa += `<li>${index} : ${item}</li> `      
+    })
+    aaa +='</ul>';
+    document.write(aaa)
   </script>
 </body>
 
