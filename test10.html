@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0518</title>
+
+</head>
+
+<body>
+
+
+  <script>
+    // 변수를 생성합니다.
+
+    let primitiveNumber = 273;
+
+    // 메소드를 추가합니다.
+
+    Number.prototype.toString = function () {
+
+      return 'Primitive Method';
+
+    };
+
+    // 메소드를 실행합니다.
+
+    console.log(primitiveNumber.toString());
+    var array1 = [1,2,2,2,2];
+    for (var i = 1; i <= 45; i++) {
+      array1.fill(i);
+    }
+    console.log(array1);
+  </script>
+</body>
+
+</html>
