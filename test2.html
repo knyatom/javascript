@@ -159,9 +159,12 @@
                 })
                 .then(json => {
                     console.log(json);
-                    for (var i in json) {
-                        data[i].country = json[i].name;                    
-                    }
+                    // for (var i in json) {
+                    //     data[i].country = json[i].name;                    
+                    // }
+                    json.forEach((a,b)=>{
+                        data[b].country = json[b].name;  
+                    })
                     xAxis.data.setAll(data);
                     series.data.setAll(data);
                 })
