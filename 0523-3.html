@@ -249,18 +249,17 @@
     value: 99
    }]
 
-
    // 비동기방식 async
    fetch('https://jsonplaceholder.typicode.com/users')
     .then(response => response.json())
-    .then(json => {
-     console.log(json)
+    .then(json => {         
      for (var i=0; i<data2.length; i++) {      
        data2[i].category = json[i].name;
      }     
 
+     series.data.setAll(data2);
     })
-   series.data.setAll(data2);
+   
    series.appear(1000, 100);
 
   }); // end am5.ready()
