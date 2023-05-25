@@ -51,7 +51,7 @@ function good() {
 
  var students2 = students.sort(function (a, b) {
   return b.getSum() - a.getSum();
- }).slice(0,3)
+ }).slice(0, 3)
  console.log(students2)
 
  for (var i in students2) {
@@ -66,10 +66,10 @@ function bad() {
 
  var students2 = students.sort(function (a, b) {
   return a.getSum() - b.getSum();
- }).slice(0,3)
+ }).slice(0, 3)
 
  for (var i in students2) {
-  output += (Number(students.length)-i) + " : " + students2[i].toString() + "<br>"
+  output += (Number(students.length) - i) + " : " + students2[i].toString() + "<br>"
  }
  output += "<hr>"
  list.innerHTML = output;
@@ -81,7 +81,7 @@ function jang() {
 
  var students2 = students.sort(function (a, b) {
   return a.getSum() - b.getSum();
- }).slice(4,7)
+ }).slice(4, 7)
 
  for (var i in students2) {
   output += (Number(i) + 4) + " : " + students2[i].toString() + "<br>"
@@ -89,3 +89,59 @@ function jang() {
  output += "<hr>"
  list.innerHTML = output;
 }
+
+function del() {
+ console.log(students)
+ students.splice(0, 1) // 리스트 하나씩만 삭제하기
+
+ var output = "이름 총점 평균 <br> <hr>"
+ for (var i in students) {
+  output += (i) + " : " + students[i].toString() + "<br>"
+ }
+ output += "<hr>"
+ list.innerHTML = output;
+}
+
+function reload() {
+ location.reload();
+}
+
+// getFullYear()
+// getMonth()
+// getDate()
+// getDay() 요일
+var date = new Date();
+var year = date.getFullYear()
+var month = date.getMonth() + 1;
+var day = date.getDate();
+var 요일 = date.getDay();  // 일요일 0
+
+switch (요일) {
+ case 0: 요일 = "일요일";
+  break;
+ case 1: 요일 = "월요일";
+  break;
+ case 4: 요일 = "목요일"
+  break;
+}
+time.innerHTML = year + "년" + month + "월" + day + "일" + 요일
+
+
+setInterval(function () {
+ time2.innerHTML = new Date().toLocaleTimeString()
+ console.log(new Date().getHours())
+ if (new Date().getHours() == '18') {
+  alert("퇴근시간입니다")
+ }
+}, 1000)
+
+
+
+
+
+
+
+
+
+
+
