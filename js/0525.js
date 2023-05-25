@@ -374,3 +374,66 @@ console.log(user2)
 console.log(user3)
 document.write(user2.toString())
 document.write(user3.toString())
+
+// 전개구문 ( spread syntax ) : 배열
+var arr1=[1,2,3]
+var arr2=[4,6,7]
+var arr3=[...arr1, ...arr2]
+
+// arr.push(), arr.splice(), arr.concat()
+// 넣고,빼고, 병합
+document.write(arr3)
+
+// 전개구문 : 객체
+var user={name:"mike"}
+var mike={...user, age:20}
+console.log(mike)
+
+// 전개구분: 복제
+var arr4=[...arr]
+console.log(arr4)
+var user4={...user}
+var user5={...mike,gener:"남성"}
+console.log(user4)
+console.log(user5)
+
+// 상품리스트, 할일목록, 리스트추가할때 복제를 해서 추가한다.
+// 기존데이터 -> push()
+var arr5=[1,2,3]
+var arr6=[4,5,6]
+arr6.forEach((num)=>{
+ arr5.unshift(num)  // 맨앞에 추가
+})
+console.log(arr5)  // 6,5 4, 1, 2 3
+// unshift <->push,  shift<-> pop
+
+var arr5=[1,2,3]
+var arr6=[4,5,6]
+arr6.reverse().forEach((num)=>{
+ arr5.unshift(num)  // 맨앞에 추가
+})
+console.log(arr5)  // 4, 5, 6 ,1, 2,3
+
+var 사용자={name:"원빈"}
+var 정보={age:10}
+var it=["자바스크립트","java"]
+var 언어=["영어","중국어"]
+
+var user={
+ ...사용자, 
+ ...정보,
+ 기술: [...it, ...언어] 
+}
+console.log(user)
+
+var user1=Object.assign({},사용자, 정보,{ 기술:[] })
+console.log(user1)
+
+it.forEach((a)=>{
+ user1.기술.push(a)
+})
+언어.forEach((a)=>{
+ user1.기술.push(a)
+})
+
+console.log(user1)
