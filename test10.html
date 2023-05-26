@@ -22,12 +22,26 @@ var date = new Date();
 date.setMinutes(date.getMinutes() + 60);
 document.cookie = `color=black; expires=${date.toUTCString()}`;
 
-const getCookieValue = (name) => (
-  document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
-)
+// const getCookieValue = (name) => (
+//   document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
+// )
 
-var value = getCookie("color");
-
+// var value = getCookie("color");
+var value= document.cookie
+const cookieItems = value.split(';');  
+  const obj = {};
+  cookieItems.forEach((item) => {
+    // '='으로 분리
+    const elem = item.split('=');
+    console.log(elem)
+    // 키 가져오기
+    const key = elem[0].trim();
+    // 값 가져오기
+    const val = decodeURIComponent(elem[1]);
+    // 저장
+    obj[key] = val;
+  });
+  console.log(obj)
   </script>
   
 </body>

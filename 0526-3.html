@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>브라우져 객체모델</title>
+
+</head>
+<body>
+ <h1> 현재위치정보 알기</h1>
+ <button onclick="getGeolocation()">
+  위치 정보 얻기</button>
+ <div id="target"></div>
+ <button onclick="getGeolocation2()">
+  지도보기</button>
+<hr>
+<h2> 파일 API </h2>
+<input type="file" id="input" name="input">
+<button id="readfile" onclick="readFile()">파일읽기</button>
+<button id="readfile2" onclick="readFile2()">파일정보</button>
+<hr>
+<textarea id="result" rows="6"cols="60"></textarea>
+
+ <script src="js/0526-3.js"></script>
+</body>
+</html>
