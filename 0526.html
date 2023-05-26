@@ -23,6 +23,34 @@
 <input type="text" id="numBox">
 <button type="button" id="btn">테스트</button>
 <p id="errText"></p>
+<pre>
+  try{ 
+    // 실제작성할 테스트 코드블록
+  }
+  catch(err){ 
+   // 에러 코드블록
+  }
+  finally{  
+   // try catch 상관없이 실행되는 코드
+  }
+
+ 자바스크립트 에러객체
+ 오류발생시 오류정보를 제공하는 
+ 오류관련 객체가 내장되어 있다.
+
+ try catch 에서 catch(err) err-> Error객체
+ err.name   오류 이름
+ err.message 오류 메시지
+
+ 에러이름 종류
+ 1) EvalEroor
+ 2) RangeError
+ 3) ReferencError
+ 4) SyntaxError
+ 5) TypeError
+ 6) URIError
+</pre>
+<p id="errText2"></p>
 
 <script src="js/0526.js"></script>
 </body>

@@ -61,29 +61,18 @@ Ajax 통신
 배열관련된 메소드(API)
 문자 API(메소드)
 ----------------------------------
+오류 처리
+클로저와 콜백함수
 
-수업자료(교안)
-->자바스크립트 기본실습예제(중급1) 참조
+javascript eval
 
-object 객체에 메소드
-배열객체의 메소드들
+toPrecision
+toFixed
 
-onchange
-onblur
-onfocus
-
-수업자료(코딩)-> 최신게시판
-String객체와 배열객체
-
-System.out.println() 줄바꿈
-writeln() 줄바꿈
-
-
-
-
-
-
-
+javascript decodeURI
+encodeURI
+인코드 - 암호화하다
+디코드 - 해독하다.
 
 
 
