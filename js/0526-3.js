@@ -43,15 +43,13 @@ function readFile() {
 function readFile2() {
  var files = document.getElementById('input').files;
 
- output = "";
- // console.log(files[0])
- // console.log(files[1])
+ output = ""; 
  for (var i = 0,f; f = files[i];i++ ) {
-  console.log(i, f)
-  output += files[0].name + "\n";        /* f.name - Filename  files[i].name */
+  output += f.name + "\n";        /* f.name - Filename  files[i].name */
   output += f.type + "\n";                /* f.type - File Type */
   output += f.size + "bytes\n";           /* f.size - File Size */
   output += f.lastModifiedDate + "\n";    /* f.lastModifiedDate */
+  output += '\n';
  }
  document.getElementById('result').value = output;
 }
