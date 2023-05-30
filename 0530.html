@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>이벤트모델</title>
+
+</head>
+
+<body>
+ <h1> 자바스크립트 이벤트 모델</h1>
+ <h1 id="header"><span>welcome(Header)</span></h1>
+ <button id="btn1">버튼1</button>
+ <button id="btn2">버튼2</button>
+ <hr>
+ <div id="box"></div>
+ <div id="box2"></div>
+ <hr>
+ <button id="a">ButtonA</button>
+ <button id="b">ButtonB</button>
+ <button id="c">중지</button>
+ <button id="d">자동실행</button>
+ <h1>ButtonA -<span id="ca">0</span></h1>
+ <h1>ButtonB -<span id="cb">0</span></h1>
+ <a href="http://www.daum.net" id="daum" 
+ onclick="return false">
+  다음</a>
+  <a href="javascript:void(0)" id="naver">
+    네이버</a>
+  <a href="http://www.naver.com" id="naver2"
+   onclick="return naver()"
+  > 
+   네이버</a>
+
+ <script>
+  function play() {
+   box.innerHTML += "이벤트핸들러 사용1"
+  }
+  function play2() {
+   box2.innerHTML += "welcome to my world"
+  }
+  var btn1 = document.getElementById('btn1');
+  var btn2 = document.getElementById('btn2');
+  // btn1.onclick=play;   // 실행안됨
+  // btn2.onclick=play2; 
+  // btn1.onclick=play2;  
+
+  if (window.addEventListener) {
+   btn1.addEventListener('click', play, false);
+   btn1.addEventListener('click', play2, false);
+  } else if(window.attachEvent) {
+   btn1.attachEvent('onclick', play);
+   btn1.attachEvent('onclick', play2);
+  }
+
+
+
+ </script>
+
+
+ <script src="js/event.js"></script>
+</body>
+
+</html>
