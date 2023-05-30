@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>이벤트모델</title>
+ <style>
+  html {
+   border: 5px solid red;
+   padding: 30px;
+  }
+
+  body {
+   border: 5px solid blue;
+   padding: 30px;
+  }
+
+  fieldset {
+   border: 5px solid lime;
+   padding: 30px;
+  }
+
+  input {
+   border: 5px solid black;
+   padding: 30px;
+  }
+ </style>
+</head>
+
+<body id="body">
+ <!-- <h2> 기본이벤트제거 이용 유효성검사</h2>
+ <form action="http://www.google.co.kr" id="form2">
+  <label>이름</label>
+  <input type="text" id="name2">
+  <input type="submit">
+ </form>
+ <hr> -->
+ <h1> 이벤트 캡쳐링과 버블링</h1>
+ <fieldset id="field">
+  <legend>이벤트 전달</legend>
+  <input type="button" id="button" value="target">
+ </fieldset>
+ <hr>
+ body태그
+ <div id="div">div태그
+  <p id="p"> P태그
+   <a href="#" id="a">a태그</a>
+  </p>
+ </div>
+
+ <style>
+  div,
+  p,
+  a {
+   border: 2px solid blue;
+   margin: 20px;
+   padding: 20px;
+  }
+
+  p {
+   padding: 30px;
+  }
+ </style>
+
+ <script src="js/event-1.js"></script>
+</body>
+
+</html>

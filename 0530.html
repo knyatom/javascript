@@ -24,15 +24,19 @@
  <button id="d">자동실행</button>
  <h1>ButtonA -<span id="ca">0</span></h1>
  <h1>ButtonB -<span id="cb">0</span></h1>
- <a href="http://www.daum.net" id="daum" 
- onclick="return false">
+ <a href="http://www.daum.net" id="daum" onclick="return false">
   다음</a>
-  <a href="javascript:void(0)" id="naver">
-    네이버</a>
-  <a href="http://www.naver.com" id="naver2"
-   onclick="return naver()"
-  > 
-   네이버</a>
+ <a href="javascript:void(0)" id="naver">
+  네이버</a>
+ <a href="http://www.naver.com" id="naver2" onclick="return naver()">
+  네이버</a>
+
+ <h2> 기본이벤트제거 이용 유효성검사</h2>
+ <form action="http://www.google.co.kr" id="form2">
+  <label>이름</label>
+  <input type="text" id="name2">
+  <input type="submit">
+ </form>
 
  <script>
   function play() {
@@ -50,7 +54,7 @@
   if (window.addEventListener) {
    btn1.addEventListener('click', play, false);
    btn1.addEventListener('click', play2, false);
-  } else if(window.attachEvent) {
+  } else if (window.attachEvent) {
    btn1.attachEvent('onclick', play);
    btn1.attachEvent('onclick', play2);
   }

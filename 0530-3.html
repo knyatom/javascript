@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>이벤트모델</title>
+ <style>
+   body{height:2000px;width:2000px;
+   background:url("images/event_obj_bg.gif") 0 0 repeat-x;}
+   #wrap{position:fixed;width:80%;}
+   #key{ime-mode:disabled;}
+ </style>
+</head>
+
+<body id="body">
+
+ <div id="wrap">
+  <h1>마우스 이벤트 객체 속성</h1>
+  <form action="#" method="get" name="f1">
+     <fieldset>
+        <legend>커서 위치 추적</legend>
+        <p>
+        <label for="client_x">clientX :</label>
+        <input type="text" name="client_x" id="client_x" />
+        </p>
+        <p>
+        <label for="pg_x">pageX :</label>
+        <input type="text" name="pg_x" id="pg_x" />
+        </p>
+        <p>
+        <label for="client_y">clientY :</label>
+        <input type="text" name="client_y" id="client_y" />
+        </p>
+        <p>
+        <label for="pg_y">pageY :</label>
+        <input type="text" name="pg_y" id="pg_y" />
+        </p>
+     </fieldset>
+  </form>
+  <h1>키보드 이벤트 객체 속성</h1>
+  <form action="#" method="get" name="f2">
+     <fieldset>
+        <legend>키 코드 값</legend>
+        <p>
+           <label for="key">입력 키보드 :</label>
+           <input type="text" name="key" id="key" />
+           <label for="code">유니코드 값 :</label>
+           <input type="text" name="code" id="code" />
+        </p>
+     </fieldset>
+  </form>
+</div>
+ <style>
+  .outer {
+   width: 200px;
+   height: 200px;
+   border: 1px solid;
+  }
+
+  .inner {
+   width: 60%;
+   height: 60%;
+   border:1px solid;
+  }
+ </style>
+ <script src="js/event-3.js"></script>
+</body>
+
+</html>

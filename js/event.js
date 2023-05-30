@@ -3,7 +3,9 @@
 // onload 이벤트속성
 // 할당된함수 : 이벤트리스너, 이벤트핸들러
 // 이벤트연결한다.
+
 // 이벤트관련속성
+// click, mouseover,mouseenter, focus
 
 // 이벤트 모델
 // DOM Level 0
@@ -12,8 +14,8 @@
 
 // DOM Level 2
 // 표준이벤트모델, 익스플로러이벤트모델
-// addEventListener(On)
-// attachEvent
+// addEventListener(type,listener,false)
+// attachEvent 
 
 // 익스플로러면 attachEvent 를 사용하고
 // 그외에는 addEventListener를 사용해라
@@ -62,12 +64,40 @@ d.onclick=function(){
 //  //return false;
 // }
 // href="javascript:void(0)"
-daum.addEventListener('click',function(){
- this.style.background='pink';
+// daum.addEventListener('click',function(){
+//  this.style.background='pink';
+// });
+
+// function naver(){
+//  naver2.style.background='red'
+//  return false;
+// }
+// 한글입력시에 전송한다.
+var form2=document.getElementById('form2');
+// form2.onsubmit=function(){
+//  var val=name2.value;
+//  console.log(val);
+//  if(val.replace(/[가-힝]/g,"").length==0){
+//   event.preventDefault();
+//    return false;
+//  }else{
+//   //return false;
+//   alert("한글이름을 입력하세요");
+//   event.preventDefault();
+//  }
+// }
+
+form2.addEventListener('submit',function(e){
+ var val=name2.value;
+ console.log(val);
+ if(val.replace(/[가-힝]/g,"").length==0){
+  e.preventDefault();
+   return false;
+ }else{
+  //return false;
+  alert("한글이름을 입력하세요");
+  e.preventDefault();
+ }
 });
 
 
-function naver(){
- naver2.style.background='red'
- return false;
-}

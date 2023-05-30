@@ -64,12 +64,9 @@ Ajax 통신
 오류 처리
 클로저와 콜백함수
 ----------------------------------
-5월25일 개발자환경구축시험
-
 이벤트모델
 이벤트레벨
 이벤트제거
-이벤트자동실행
 이벤트객체
 이벤트강제실행
 기본이벤트(디폴트이벤트)제거
@@ -82,6 +79,8 @@ mouseenter와 mouseover
 자바스크립트강좌->15번게시판참조
 
 이벤트관련용어
+-----------------------------------
+로컬스토리지/세션스토리지/쿠키
 
 
 // window.onload=function(){  }
@@ -103,10 +102,59 @@ mouseenter와 mouseover
 
 $('btn').on('click',function(){ });
 
+이벤트객체
+e || window.event
+
+this -> 클릭한 이벤트 발생한 객체
+e.currentTarget -> this
+
+btn.trigger('click')
+
+기본이벤트제거
+이벤트전달제거
+preventDefault()
+stopPropagation();
+
+기본이벤트 -> a태그 클릭
+ form -> submit
+
+href="javascript:void(0)"
+
+val.replace(/[가-힝]/g,"").length==0
+한글이 있으면 공백으로 대체하고
+그럼 길이가 0 이된다.
+결국 한글이 있으면 길이가 0이다.
+
+이벤트전달(캡쳐링/버블링)
+
+1 -> 캡쳐링
+2 -> target
+3 -> 버블링
 
 
+이벤트전달방지
+event.stopPropagation();
+이벤트 버블링 제거
 
 
+모두싸인 -> 회원가입
+개인도장만들기
+
+과제물제출용->339번 게시판
+개발자환경구축시험문제
+
+이벤트위임
+$('div').on('click a',function(){ });
+
+mouseenter와 mouseover의 차이점
+마우스이벤트
+키보드이벤트
+
+mouseover / mouseenter
+mouseout  / mouseleave
+
+자바스크립트예제
+수업자료코딩
 
 
 
