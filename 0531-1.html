@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>정규표현식</title>
+   <script src="js/0531-1.js"></script>
+</head>
+
+<body>
+   <h2>웹스토리지</h2>
+   <h2>localStorage</h2>
+   <h2>sessionStorage</h2>
+   <h2>쿠키</h2>
+   <h3>로컬스토리지</h3>
+   <p> 브라우저를 닫아도 데이터가 유지된다.</p>
+   <h3>세션스토리지</h3>
+   <p> 브라우저를 닫으면 데이터가 삭제된다.</p>
+   <p> 키값, key-value 쌍 형태로 저장</p>
+   <p> 페이지 방문 횟수 : <span id="count"></span></p>
+   <p> 페이지 방문 횟수 : <span id="count2"></span></p>
+   <p>
+      <button onclick="inCounter()" type="button">눌러보세요</button>
+      <button onclick="init()" type="button">다시시작</button>
+   </p>
+   <div id="target"></div>
+   <p>
+      <button onclick="inCounter2()" type="button">세션눌러보세요</button>
+      <button onclick="init2()" type="button">다시시작</button>
+   </p>
+   <div id="target2"></div>
+
+   <script>
+      function init2() {
+         sessionStorage.removeItem("count");
+         target2.innerHTML = "다시시작합니다";
+      }
+      function inCounter2() {
+         if (!sessionStorage.count) sessionStorage.count = 1;
+         sessionStorage.count++;
+
+         // if (sessionStorage.count) { sessionStorage.count++; }
+         // else { sessionStorage.count = 1 }
+
+         target2.innerHTML = sessionStorage.count + "번 클릭했습니다";
+      }
+      function init() {
+         localStorage.removeItem("count");
+         target.innerHTML = "다시시작합니다";
+      }
+      function inCounter() {
+         // if (!localStorage.count) localStorage.count = 1;
+         // localStorage.count++;
+
+         if (localStorage.count) { localStorage.count++; }
+         else { localStorage.count = 1 }
+
+         target.innerHTML = localStorage.count + "번 클릭했습니다";
+      }
+
+
+      // 페이지가 없으면 0으로 초기화
+      if (!localStorage.pageLoadCount) { localStorage.pageLoadCount = 0; }
+
+      localStorage.pageLoadCount = parseInt(localStorage.pageLoadCount) + 1;
+      var count = document.getElementById('count');
+      count.textContent = localStorage.pageLoadCount;
+      //console.log(localStorage.pageLoadCount);
+
+      if (!sessionStorage.pageLoadCount) { sessionStorage.pageLoadCount = 0; }
+
+      sessionStorage.pageLoadCount = parseInt(sessionStorage.pageLoadCount) + 1;
+      var count2 = document.getElementById('count2');
+      count2.textContent = sessionStorage.pageLoadCount;
+      //console.log(sessionStorage.pageLoadCount);
+
+      if(document.cookie){
+         console.log("창이 열린다.")
+      }else{
+         console.log("창이 닫혔다.")
+      }
+   </script>
+
+</body>
+
+</html>
