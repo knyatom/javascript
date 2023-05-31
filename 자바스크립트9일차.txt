@@ -153,8 +153,27 @@ mouseenter와 mouseover의 차이점
 mouseover / mouseenter
 mouseout  / mouseleave
 
-자바스크립트예제
-수업자료코딩
+clientX -> 보이는 브라우져화면 이 기준
+offsetX -> 부모박스를 기준
+pageX -> 전체문서를 기준, 스크롤화면 포함
+screenX -> 모니터화면을 기준, 브라우저가 아니고 자신의 
+                모니터화면을 기준
+-----------------------------------------------
+
+로컬스토리지/세션스토리지/쿠키
+정규표현식
+추가적인 ES5 내장객체
+call, apply, bind
+프라미스 await/async
+class문법
+-----------------------------------------
+
+
+
+
+
+
+
 
 
 
