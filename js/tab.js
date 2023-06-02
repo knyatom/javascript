@@ -38,7 +38,8 @@ UL.addEventListener('click', function (e) {
   LI.forEach((li) => {
    li.classList.remove('active');
   });
-  
+  // this-> ul 
+  console.log(this);
   e.target.classList.add('active');
   DIV.forEach((div) => {
    div.classList.remove('display');
