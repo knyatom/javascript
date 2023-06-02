@@ -2,10 +2,9 @@
 Ajax 통신
 https://regexper.com/
 -----------------------------------
-추가적인 ES5 내장객체들
 call, apply, bind 에 대해서
 프라미스 await/async
- 콜백지옥
+콜백지옥
 class문법
 ajax 실습
 -----------------------------------------
@@ -17,9 +16,12 @@ ajax 실습
 추가적인 ES5 내장객체들
 자바스크립트강좌->45번게시판참조
 
+http://www.htmldrive.net/
 
+react, vue
 
-
+ajax 통신- restfull service
+---------------------------------------------
 
 
 

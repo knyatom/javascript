@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>바닐라 자바스크립트 </title> 
+ <style>
+  *{ margin:0; padding:0;}
+  li{ list-style:none;}
+  section{ width:400px; height:300px; background-color: silver; margin:auto;
+   overflow: hidden;   }
+  section div{ font-size: 50px; text-align: center; height: 100%; }
+  ul{ display: flex; height: 50px; background-color: lightblue;
+  width:400px; margin:auto;   }
+  ul>li{ flex:1; text-align: center; line-height: 50px; cursor: pointer; }
+  h1{ text-align: center;}
+  .display{ display: block;}
+  .active{ background-color: steelblue;}
+  section>div{ display: none;}
+ </style>
+</head>
+<body>
+ <h1> Tab menu 만들기</h1>
+ <ul>
+  <li class="active">Menu1</li>
+  <li>Menu2</li>
+  <li>Menu3</li>
+  <li>Menu4</li>
+ </ul>
+ <section>
+   <div class="display">Content1</div>
+   <div>Content2</div>
+   <div>Content3</div>
+   <div>Content4</div>
+ </section>
+<script src="js/tab.js"></script>
+</body>
+</html>
