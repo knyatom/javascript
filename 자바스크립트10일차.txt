@@ -31,6 +31,17 @@ jsonplaceholder 에서
 카페 수업자료(코딩)
 xml파일과 json 파일 샘플 다운받으세요
 
+WebStorage 와 LocalStorage 그리고 Cookie, 세션(session)
+
+WebStorage 
+  LocalStorage와 sessionStorage 의 차이점
+  Cookie와 session 의 차이점
+
+파워포인터로 정리하기
+- 차이점(장단점)
+- 가져오기, 저장하기, 삭제하기
+
+ 쿠키는 클라이언트용이고  세션은 서버용이다.
 
 
 
