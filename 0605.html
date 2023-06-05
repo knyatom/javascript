@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>0605.html</title>
+ <script src="js/0605.js"></script>
+ <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+ <h1> call, apply, bind 에 대해서 </h1>
+ <h2> 바닐라자바스크립트 실습</h2>
+ <h2> 이미지 슬라이드 만들기</h2>
+ <div id="slider">
+  <div class="item">
+   <h1> 1.one </h1>
+  </div>
+  <div class="item">
+   <h1> 2.two </h1>
+  </div>
+  <div class="item">
+   <h1> 3.three </h1>
+  </div>
+  <div class="item">
+   <h1> 4.four </h1>
+  </div>
+  <div class="item">
+   <h1> 5.Five </h1>
+  </div>
+ </div>
+<h2> 순환하는 이미지 슬라이드</h2>
+<div id="gallery2">
+ <ul>
+  <li>이미지0</li>
+  <li>이미지1</li>
+  <li>이미지2</li>
+  <li>이미지3</li>
+  <li>이미지4</li>
+ </ul>
+ <p><button>Left</button> <button>Right</button></p>
+</div>
+
+
+ <script>
+  const SHOW = "show";
+  const firstSlide = document.querySelector('.item:first-child');
+  console.log(firstSlide);
+
+  function slide() {
+   var currentSlide = document.querySelector("." + SHOW);
+   var currentSlide = document.querySelector(`.${SHOW}`);
+
+   if (currentSlide) {
+    // 현재슬라이드는 클래스 제거
+    currentSlide.classList.remove(SHOW);
+    var nextSlide = currentSlide.nextElementSibling;
+
+    // 다음슬라이드가 있으면 다음슬라이드에 클래스를 추가하고
+    // 없으면 처음슬라이드에 클래스를 추가한다.
+    if(nextSlide){
+     nextSlide.classList.add(SHOW);
+    }else{
+     firstSlide.classList.add(SHOW);
+    } 
+   } else {
+    firstSlide.classList.add(SHOW);
+   }
+  }
+  slide();
+ var STOP=setInterval(slide,5000);
+ // mouse event로 마우스를 올리면 슬라이드 중지
+ // 마우스가 다시 나가면 슬라이드 재개
+var slider=document.getElementById('slider');
+slider.addEventListener('mouseenter',function(){
+  clearInterval(STOP);
+});
+slider.addEventListener('mouseleave',function(){
+ STOP=setInterval(slide, 5000);
+});
+
+ </script>
+
+</body>
+
+</html>
