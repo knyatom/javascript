@@ -42,8 +42,12 @@ size() 는 제이쿼리 3버젼부터 폐지
 .length 사용가능
 last()  = eq(-1)
 
+수업자료(코딩)->기상청데이터
+http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108
 
-
+CORS 검색해서 읽어보세요.
+Cross Origin Resource Sharing
+교차출처 리소스 공유
 
 
 
