@@ -41,7 +41,47 @@ $('p').each(function(index,item){
 // classList.remove()  -> removeClass()
 
 // index() 
+// handler, callback
+$('dl>dt').click(function(e){
+ e.stopPropagation(); // 이벤트전달제거
+ // 형제들간의 순번(절대번호)
+ var index1=$(this).index(); // 클릭한 객체의 인덱스값
+ console.log(index1);
+ var index2=$('dl>dt').index(this);
+ // dt에서 클릭한 순번
+ console.log(index2);
+});
 
+// 객체 확장. $.extend()
+var hero={};
+hero.name="아이언맨";
+hero.gender="남성"
+hero.skill="super suit"
 
+console.log(hero);
+$.each(hero,function(i,item){
+  out="";
+  out+="<p>"+i +":" +item+"</p>";
+  $('body').append(out);
+});
+// 객체확장
+$.extend(hero,{
+   skill2 : "나노수트"
+});
+$.each(hero,function(i,item){
+ out="";
+ out+="<p>"+i +":" +item+"</p>";
+ $('body').append(out);
+});
 
+// $('body').append(out)  
+// appendTo($('body'))
+// $("h1") -> h1태그를 선택
+// createElement, createTextNode
+// <h1> welcome </h1>
+// appendChild
+// 동적으로 태그를 추가
+// $('<h1>welcome</h1>') 
+$('<h1>welcome</h1>').appendTo($('body')) ;
+$('<h1>welcome</h1>').appendTo('body') ;
 
