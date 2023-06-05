@@ -30,10 +30,17 @@ var 학생=[
 ];
 $.each(학생,function(index,item){
  var out="";
- out+=`<p> ${index} - ${item.name} : ${item.age} </p>`;
- 
+ out+=`<p> ${index}-${item.name}:${item.age}</p>`; 
  $('body').append(out);
 });
+
+$('p').each(function(index,item){
+ $(this).addClass('color'+index);
+});
+// classList.add()  -> addClass()
+// classList.remove()  -> removeClass()
+
+// index() 
 
 
 

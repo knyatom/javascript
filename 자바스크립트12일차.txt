@@ -26,8 +26,13 @@ call, apply, bind
 오버라이딩
 오버로딩
 
+프라미스 await/async
+promise
 
+$(css선택자).css('color','red')
+$('h1').css('color','red')
 
+jQuery강좌-> 21번게시판 참조
 
 
 
