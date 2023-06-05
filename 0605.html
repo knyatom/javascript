@@ -34,17 +34,67 @@
 <h2> 순환하는 이미지 슬라이드</h2>
 <div id="gallery2">
  <ul>
-  <li>이미지0</li>
+  <li style="left:0">이미지0</li>
   <li>이미지1</li>
   <li>이미지2</li>
   <li>이미지3</li>
   <li>이미지4</li>
  </ul>
- <p><button>Left</button> <button>Right</button></p>
+ <p><button>Left</button> 
+  <button>Right</button></p>
 </div>
-
-
  <script>
+var LI=document.querySelectorAll('ul>li');
+var LEFT=document.querySelector('p button:first-child')
+var RIGHT=document.querySelector('p button:last-child')
+
+var prev=0;
+var current=0;
+var next=0;
+
+LEFT.onclick=function(){
+ Linit();
+ prev=LI[current];
+ //prev.style.left="0";
+ prev.style.left="-100%";
+ current++;
+if(current % 5==0){
+ current=0; Linit();
+}
+ next=LI[current];
+ //next.style.left="-100%";
+ next.style.left="0";
+}
+// Right
+RIGHT.onclick=function(){
+ Rinit();
+ prev=LI[current];
+ //prev.style.left="0";
+ prev.style.left="100%";
+ current++;
+if(current % 5==0){
+ current=0; Rinit();
+}
+
+ var next=LI[current];
+ //next.style.left="100%";
+ next.style.left="0";
+}
+// 이미지 왼쪽으로 모두 배치하기
+function Linit(){
+ for(var i=0;i<LI.length;i++){
+  LI[i].style.left="-100%"
+ }
+}
+// 이미지 오른쪽으로 모두 배치하기
+function Rinit(){
+ for(var i=0;i<LI.length;i++){
+  LI[i].style.left="100%"
+ }
+}
+
+
+
   const SHOW = "show";
   const firstSlide = document.querySelector('.item:first-child');
   console.log(firstSlide);
