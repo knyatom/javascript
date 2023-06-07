@@ -36,6 +36,24 @@ document.writeln(cn2);
 
 자바스크립트로 드롭다운메뉴 만들기
 
+$('a').hover(function(){ }, function(){ });
+
+수업자료코딩->확인예제2.zip을
+다운받고 압축을 푸세요.
+
+$('a').click(function(){ 
+
+});
+$('a').on('click',function(){ 
+
+});
+
+
+
+
+
+
+
 
 
 
