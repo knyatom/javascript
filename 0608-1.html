@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script src="js/0608.js" defer></script>
+ <style>
+  .color0{color:red}
+  .color1{color:blue}
+  .color2{color:green}
+  .color3{color:lime}
+  .color4{color:gold}
+  .color5{color:gray}
+  .color6{color:orange}
+  .color7{color:steelblue}
+ </style>
+</head>
+<body>
+ <h2> 아래 리스트를 1초단위로 배경식이 순차적으로 변경되게 하세요</h2>
+ <ul id="wrapper">
+  <li>01</li>
+  <li>02</li>
+  <li>03</li>
+  <li>04</li>
+  <li>05</li>
+  <li>06</li>
+  <li>07</li>
+  <li>08</li>
+ </ul>
+ <button>addClass</button>
+ <button>removeClass</button>
+ <button>toggleClass</button>
+ <hr>
+ <img src="./imgs/cat1.png">
+ <img src="./imgs/cat1.png">
+ <img src="./imgs/cat1.png">
+<hr>
+<input type="text">
+<hr>
+<p> welcome</p>
+<p> welcome</p>
+<p> welcome</p>
+<p> welcome</p>
+
+ <script>
+ var color=["red","blue", "green", "pink", "lime", "cyan", "gold" ,"tomato"];
+ var i=0;
+ setInterval(() => {
+   $('#wrapper li').eq(i).css('background',color[i]);
+   i++; 
+   if(i==9){   
+    $('#wrapper li').css('background','none');
+   }
+   i=i% (color.length+1);
+   
+ }, 2000);
+
+
+ </script>
+</body>
+</html>
