@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script src="js/0608-2.js" defer></script>
+ <style>
+  
+ </style>
+</head>
+<body>
+<h1> html()메서드로 콘텐츠를 동적으로 추가하기 3~4가지</h1>
+<button>문서가져오기1</button><button>문서가져오기2</button>
+<button>문서가져오기3</button>
+<div id="content"></div>
+<ul>
+ <li>정적인 컨텐츠</li>
+</ul>
+<ul id="none" style="display: none;">
+ <li>동적숨김</li>
+ <li>동적숨김</li>
+ <li>동적숨김</li>
+</ul>
+
+ <script>
+$('button').first().on('click',function(){
+ var str="<ul><li>동적</li><li>동적2</li><li>동적3</li></ul>";
+ $('#content').html(str);
+});
+$('button').eq(1).on('click',function(){
+ var str="<ul>";
+     str+="<li>동적</li>";
+     str+="<li>동적</li>";
+     str+="<li>동적</li>";
+     str+="</ul>"
+ $('#content').html(str);
+});
+$('button').eq(2).on('click',function(){ 
+ $('#content').html($('#none').html());
+});
+// 정적인컨텐츠만 이벤트 연결
+// $('li').click(function(){
+//  $(this).css('background','red');
+// });
+// 동적인 컨텐츠에 이벤트연결-이벤트위임 delegate방식
+ $(document).on('click','li',function(){
+  $(this).css('background','red');
+ });
+ $(document).on(
+  {
+   'click':function(){   $(this).css('background','red')  },
+   'mouseenter':function(){ $(this).css('background','pink')  },
+   'mouseout' :function(){ $(this).css('background','blue') } 
+  },'li');
+
+
+ </script>
+</body>
+</html>
