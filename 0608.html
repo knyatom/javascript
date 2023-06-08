@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Document</title>
+</head>
+<body>
+ <h2> 폼에서 유효성검사-</h2>
+ <h3>기본유효성검사/ 데이터형식유효성검사(정규표현식)</h3>
+<form name="login">
+ <p>이름 : <input type="text" name="name"></p>
+ <p>아이디:<input type="text" name="id"></p>
+ <p>비밀번호:
+  <input type="password" name="passwd" onkeypress="press(this.form)">
+ </p>
+ <p>
+  <input type="submit" value="전송" onclick="checkForm()">
+ </p>
+</form> 
+<div id="info"></div>
+<script>
+ function checkForm(){
+  event.preventDefault();
+  // 이름데이터 검사    
+  if(document.login.name.value==""){
+     alert("이름을 입력해주세요");
+     login.name.focus(); // 커서자동포커스
+     return false; // 다음단계로 이동금지
+    }
+  var str="아이디 : "+login.id.value+"\n";
+      str+="비밀번호 : " + login.passwd.value ;
+    //  alert(str);
+    info.innerHTML=str;
+  // 이름은 3자리이상 5자리이내로 입력하세요
+  if(login.name.value.length<3 ||  login.name.value.length>5){
+   alert("이름은 3자리이상 5자리이내로 입력하세요");
+    login.name.select();
+  // login.name.focus();
+  }     
+  // 이름에 숫자를 입력한 경우 isNaN(is Not a Number)
+  // 숫자->false, 숫자가 아니면 true
+  if(!isNaN(login.name.value.substr(0,1))){
+     alert("이름은 숫자로 시작할 수 없다.");
+     login.name.select();
+  }
+  // 아이디 영문소문자만 입력하기
+  for(var i=0;i<login.id.value.length;i++  ){
+   var ch=login.id.value.charAt(i);
+   if((ch<'a' || ch>'z')&& (ch>'A' || ch<'Z') && (ch >'0' || ch<'9')){
+    alert("아이디 영문소문자만 입력하기");
+    login.id.select();
+    return false;
+   }
+  }
+
+
+ }  // checkForm
+ function press(f){  
+  console.log(f);
+   if(f.keyCode==13){  // Enter키를 의미  65->a 
+    login.submit();
+   }
+ }
+</script>
+document.폼이름.입력양식이름.value.length
+</body>
+</html>
