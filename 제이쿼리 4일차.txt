@@ -11,3 +11,24 @@ HTML/CSS/Javascript/jQuery -> 웹표준
 탭메뉴, 슬라이딩윈도우
 
 html 읽고 컨텐츠 설정하는 방법
+
+정적인 컨텐츠이고,
+클릭했을때 추가된 동적인 컨텐츠
+
+이벤트를 연결하면
+동적인 컨텐츠는 연결이 안된다.
+deletgate방식을 사용해야 한다.
+
+$(document).on({ 
+   'click':function(){ },
+   'mouseover':function(){ }
+ }, 'li');
+
+ $(document).on('click','li',function(){
+  $(this).css('background','red');
+ });
+
+
+
+
+
