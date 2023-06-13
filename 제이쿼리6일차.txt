@@ -1,0 +1,55 @@
+제이쿼리 6일차
+----------------------
+제이쿼리 선택자
+문서객체선택, 탐색
+문서객체조작
+이벤트
+효과
+ajax(비동기통신)
+---------------------
+폼관련 이벤트 예제
+ready와 load
+----------------------------------------
+focus           /    focusin
+강제발생       /   강제발생X
+버블링발생(X) /  버블링발생
+blur            /       focusout
+
+input에 포커스를 잃어버렸을때
+부모요소에 리스너를 주고싶을때
+focusin과 focusout을 사용하자.
+--------------------------------------------
+이벤트예제
+
+getParameter()
+getParameterValues()
+
+window.onload=function(){ }
+$(document).ready(function(){ })
+
+효과 - 애니메이션
+
+ease, 
+({ width:100},{duration:1000})
+
+자료구조 -> 큐(queue)
+스택, 리스트, arraylist, vector
+Hash, tree, Map
+
+<- 작업1 ,  작업2
+
+작업2 -> 작업 1 -> 
+작업공간(생산라인)메모리공간-힙(heap)
+파이프라인 FIFO  
+배열-> 스택메모리 -> FILO
+
+
+
+
+
+
+
+
+
+
+

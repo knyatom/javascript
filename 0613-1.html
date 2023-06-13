@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>효과애니메이션</title>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script src="js/0613.js" defer></script>
+ <style>
+  #box,#box2{ width:200px; height:200px; background-color: pink;
+  border:3px solid;}
+ </style>
+</head>
+<body>
+ <h1> 효과애니메이션</h1>
+ <button>show</button> <button>hide</button> <button>toggle</button> 
+ <button>slideDown</button> <button>slideUp</button><button>slideToggle</button>
+ <button>fadeIn</button><button>fadeOut</button><button>fadeToggle</button>
+ <button>fadeTo('slow',0.2)</button>
+ <hr>
+ <div id="box">welcome</div>
+ <h2> 사용자정의 애니메이션</h2>
+ <a href="#">animate1</a>
+ <a href="#">animate2</a>
+ <hr>
+ <div id="box2">welcome</div>
+ <h3>stop() delay() clearQueue()</h3>
+ <h2> stop animate test 하기 => stop(clearQueue,goToEnd) </h2>
+ <button>stop(false)</button><button>stop(true)</button>
+ <button>stop(false,true)</button><button>stop(true, true)</button>
+ <div id="box3"></div>
+
+ <script>
+  $('#box3').css({
+   position:'relative',
+   width:'200px',
+   height:'150px',
+   background:'red'
+  });
+setInterval(function(){
+ $('#box3').animate({left:'400'},1000).delay(500).animate({left:0},1000);
+},2000);
+
+ $('button').each(function(){
+   $(this).click(function(){
+    var html=$(this).html();
+    var exe="$('#box3')."+html;
+    eval(exe); //eval(문자열) 문자열을 자바스크립트로 실행하는 함수
+   });
+ });
+// stop(false) 현재작업 멈추고 다음 대기작업실행 (스레드thread)
+// stop(true) 메모리를 비운다. 현재대기중인 애니메이션 삭제
+// stop(false, true) 현재작업의 끝이로 이동한다.
+// stop(true, true)메모리를 비우고, 현재작업 끝으로 이동
+
+
+
+$('#box2').css("position","relative");
+$('a').first().click(function(){
+ $('#box2').animate({ left:"+=50" },600)
+});
+$('a').last().click(function(){
+ $('#box2').animate({ left:"-=50" },1000)
+});
+
+   // $('button').each(function(i){
+   //   $(this).click(function(){
+   //     var html=$(this).html();
+   //     var exe="";
+   //     if(i==9) {  exe=`$('#box').stop().${html}`;  }
+   //     else{  exe=`$('#box').stop().${html}()`; }    
+           
+   //     eval(exe);     
+   //   });
+   // });
+
+ $('button').first().click(function(){
+   $('#box').show('1000','linear',function(){
+     $('<h2>임무완료</h2>').appendTo('body');
+   });
+  });
+  $('button').eq(1).click(function(){
+   $('#box').hide('1000','swing',function(){   // linear, swing
+     $('<h2>임무완료</h2>').appendTo('body');
+   });
+  });
+
+// $('button').eq(1).click(function(){ })
+// $('button').eq(2).click(function(){ })
+
+ </script>
+</body>
+
+</html>
