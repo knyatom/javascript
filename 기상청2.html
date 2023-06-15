@@ -1,0 +1,67 @@
+<!DOCTYPE html
+ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>03_스크롤위치_읽고설정하기</title>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+ <style>
+  * {
+   margin: 0;
+   padding: 0;
+  }
+
+  #wrapper {
+   position: relative;
+  }
+
+  div.content {
+   border: 1px solid red;
+   height: 500px;
+   margin: 20px;
+  }
+
+  button {
+   all: unset;
+   position: fixed;
+   top: 100px;
+   right: 50px;
+   background-color: steelblue;
+   color: white;
+   padding: 10px;
+   border-radius: 10px;
+  }
+ </style>
+ <script>
+  $(function () {
+   $.ajax({
+    crossOrigin: false, // 크로스도메인 해결 플러그인
+    url: 'http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108',
+    dataType: 'xml',
+    success: function (response) {
+     console.log(response);
+     $(response).find('location').each(function () {
+      var city = $(this).find('city').text();
+      if (city == '대구') {
+       $('body').append(city + '<br>');
+       $(this).find('data').each(function () {
+        var output = $(this).find('tmEf').text() + " " + $(this).find('wf').text();
+        $('body').append(output + '<br>');
+       })
+      }
+     })
+    }
+   });  
+  }); //end
+ </script>
+</head>
+
+<body>
+
+ <div class="wrap"></div>
+</body>
+
+</html>
