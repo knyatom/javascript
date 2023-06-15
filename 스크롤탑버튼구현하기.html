@@ -1,0 +1,89 @@
+<!DOCTYPE html
+ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <title>03_스크롤위치_읽고설정하기</title>
+ <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+ <style>
+  * {
+   margin: 0;
+   padding: 0;
+  }
+
+  #wrapper {
+   position: relative;
+  }
+
+  div.content {
+   border: 1px solid red;
+   height: 500px;
+   margin: 20px;
+  }
+
+  button {
+   all: unset;
+   position: fixed;
+   top: 100px;
+   right: 50px;  
+   background-color: steelblue;
+   color: white;
+   padding: 10px;
+   border-radius: 10px;
+  }
+ </style>
+ <script>
+  $(document).ready(function () {
+   $('button').hide();
+   $(window).on('scroll',function(){
+    var sct=$(this).scrollTop();
+    if(sct>200){
+     $('#top').fadeIn();
+     $('#bottom').fadeOut();
+    }else{
+     $('#bottom').fadeIn();
+     $('#top').fadeOut();
+    }
+     var oft2=$('.content').eq(1).position().top;
+     console.log(oft2, sct);
+     if(sct>=oft2-10){
+    //  $('.content').eq(1).css('font-size',"80px");
+     // $('.content').eq(1).css('transition','1s');
+     $('.content').eq(1).stop().animate({fontSize:'100px'},500);
+     }else{
+    //  $('.content').eq(1).css('font-size',"30px");
+     // $('.content').eq(1).css('transition','1s');
+     $('.content').eq(1).stop().animate({fontSize:'30px'},500);
+     }
+// 스크롤을 내리면 이미지 보이게 하기 
+
+   }); //scroll 
+
+
+   $('#top').click(function(){
+    $('html,body').animate({scrollTop:0},1000);
+   });
+   $('#bottom').click(function(){
+    var documentH=$(document).height();
+    $('html,body').animate({scrollTop:documentH},1000);
+   });
+
+  }); //end
+ </script>
+</head>
+<body>
+ <div id="wrapper">
+  <button id="bottom">Bottom(아래)</button>
+  <div class="content"> content1 </div>
+  <div class="content"> content2 </div>
+  <div class="content"> content3 </div>
+  <div class="content"> content4 </div>
+  <button id="top">Top(위)</button>
+ </div>
+
+</body>
+
+</html>

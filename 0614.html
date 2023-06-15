@@ -6,16 +6,48 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Document</title>
  <script src="http://code.jquery.com/jquery-latest.js"></script>
+ <script>
+  $(document).ready(function () {
+   var data = {
+    name: "가가가",
+    region: "Seoul"
+   }
+   var data2 = {
+    name: "Hello",
+    region: "Seoul"
+   }
+   //$('<h1></h1>').text($.param(data)).appendTo('body');
+   //$('<h1></h1>').text($.param(data2)).appendTo('body');
 
+  });
+ </script>
 </head>
 
 <body>
-<h2> ajax로 데이터요청하기</h2>
-<div id="one" > data.html</div>
-<div id="two" > parameter</div>
-<div id="sam" > xml</div>
-<div id="sa" > json</div>
-<script src="js/0614.js"></script>
+ <form id="myForm">
+  Name : <input type="text" id="name" name="name"> <br>
+  Region : <input type="text" id="region" name="region"> <br>
+  <input type="submit" value="Get">
+ </form>
+ <div id="wrap"></div>
+ <script>
+  $('#myForm').submit(function (e) {
+   var serialize = $(this).serialize();
+   var serializeArray = $(this).serializeArray();
+   //$('<h1></h1>').text(serialize).appendTo('#wrap');
+   //$('<h1></h1>').text(serializeArray).appendTo('#wrap');
+   console.log(serializeArray);
+   var out = '';
+   for (var i in serializeArray) {
+    out += serializeArray[i].name + ":" + serializeArray[i].value + "<br>";
+   }
+   //$('<h1></h1>').html(out).appendTo('#wrap');
+
+   $('#wrap').load(out);
+
+   e.preventDefault();
+  });
+ </script>
 </body>
 
 </html>

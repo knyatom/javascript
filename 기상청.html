@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Ajax로 기상청 실시간 날짜 데이터 가져오기- CORS</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script>
+        $(function() {
+            $.ajax({
+                crossOrigin: false, // 크로스도메인 해결 플러그인
+                url: 'http://www.weather.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=108',               
+                dataType: 'xml',
+                success: function(response) {
+                    console.log(response);
+                    $(response).find('location').each(function() {
+                        var city = $(this).find('city').text();
+                        if (city == '부산') {
+                            $('body').append(city + '<br>');
+                            $(this).find('data').each(function() {
+                                var output = $(this).find('tmEf').text() + " " + $(this).find('wf').text();
+                                $('body').append(output + '<br>');
+                            })
+                        }
+                    })
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="wrap"></div>
+</body>
+
+</html>

@@ -9,6 +9,20 @@ ajax(비동기통신)
 ---------------------
 jQuery Ajax
 
+public 폴더에 login.html
+
+
+http://127.0.0.1:52275/parameter?name=kim&region=seoul
+
+크롬마켓에서 postman 설치하기
+
+RESTfull Service client program
+크롬마켓
+크롬웹스토어
+postman 
+크롬에 추가 확장프로그램에 추가
+
+
 
 
 
